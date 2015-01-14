@@ -137,15 +137,26 @@ public class Vector2 {
     }
     
     /**
+     * Calculates the linear interpolation between 2 {@link Vector2}
+     * @param a Starting {@link Vector2}
+     * @param b Ending {@link Vector2}
+     * @param time Value between 0.0 and 1.0
+     */
+    public static Vector2 Lerp(Vector2 a, Vector2 b, float time){
+    	return new Vector2(MathF.Lerp(a.x, b.x, time), MathF.Lerp(a.y, b.y, time));
+    }
+    
+    /**
      * Returns the Vector2 as a string
      */
     @Override
     public String toString(){
     	StringBuilder string = new StringBuilder(); //String builder is faster than string + string
-    	string.append("X: ");
+    	string.append("{X: ");
     	string.append(x);
     	string.append(" Y: ");
     	string.append(y);
+    	string.append("}");
     	return string.toString();
     }
 }
