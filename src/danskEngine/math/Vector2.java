@@ -48,7 +48,7 @@ public class Vector2 {
      * @param a Vector2 a
      * @return {@link Vector2} where Vector2(x1 + x2, y1 + y2)
      */
-    public Vector2 add(Vector2 a){
+    public Vector2 Add(Vector2 a){
     	x += a.x;
     	y += a.y;
     	return this;
@@ -60,15 +60,42 @@ public class Vector2 {
      * @param a Vector2 a
      * @return {@link Vector2} where Vector2(x1 - x2, y1 - y2)
      */
-    public Vector2 substract(Vector2 a){
+    public Vector2 Substract(Vector2 a){
     	x -= a.x;
     	y -= a.y;
     	return this;
     }
     
-    /*
-     * Static functions
+    /**
+     * Checks if the {@link Vector2} is the same as the one provided
+     *
+     * @param obj Vector2 Object
+     * @return true if vectors are same, false if not.
      */
+    public boolean Equals (Object obj){
+    	if(obj instanceof Vector2){
+    		return this.equals((Vector2)obj);
+    	}
+    	
+    	return false;
+    }
+    
+    /* ========================================================================================
+     * Static functions
+     * ========================================================================================
+     */
+    /**
+     * Calculate the dot product of two {@link Vector2}
+     *
+     * @param a Vector2 a
+     * @param b Vector2 b
+     * @return {@link Vector2} where Vector2(a.x * b.x) + (a.y + b.y)
+     */
+    public static float Dot(Vector2 a, Vector2 b){
+    	return (a.x * b.x) + (a.y + b.y);
+    }
+    
+    
     /**
      * Adds two {@link Vector2}
      *
